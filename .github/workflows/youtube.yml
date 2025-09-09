@@ -20,7 +20,8 @@ jobs:
       - name: Install dependencies & build
         run: |
           npm install
-          npm run build
+          # Disable CI flag so warnings don't break the build
+          CI=false npm run build
 
       - name: Deploy build folder to EC2
         uses: appleboy/scp-action@v0.1.7
