@@ -26,9 +26,9 @@ jobs:
       - name: Deploy build folder to EC2
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.NEW_PAGES_SSH_HOST }}
-          username: ${{ secrets.NEW_PAGES_SSH_USERNAME }}
-          key: ${{ secrets.NEW_PAGES_SSH_PRIVATE_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           source: "build/*"
           target: "/var/www/html/youtube-demo"
